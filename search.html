@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>哈趣-有趣有料的短视频</title>
+	<meta name="keywords" content="哈趣,哈趣APP,短视频,社交平台" />
+	<meta name="description" content="哈趣是一款移动端的短视频观看、分享、社交平台，提供最新最热门的有趣短视频内容。" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/search.css">
+</head>
+<body>
+	<section>
+		<form action="" method="post" class="search_box">
+			<div class="search_icon"></div>
+			<input type="text" name='keyword' placeholder="请输入视频名称或关键字">
+			<div class="submit_bnt pull-right" onclick="sum()">搜索</div>
+			<!-- <input type="submit" name=""> -->
+		</form>
+		<ul class="searchlist">
+			<div class="search_title">
+				热搜排行
+			</div>
+			<li class="first clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">1320032</div>
+				</div>
+			</a></li>
+			<li class="second clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">1320032</div>
+				</div>
+			</a></li>
+			<li class="third clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">1320032</div>
+				</div>
+			</a></li>
+			<li class="clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">13032</div>
+				</div>
+			</a></li>
+			<li class="clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">1320032</div>
+				</div>
+			</a></li>
+			<li class="clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">1320032</div>
+				</div>
+			</a></li>
+			<li class="clearfix"><a href="">
+				<span class="num">1</span>
+				<div class="main">
+					<p class="title">王宝强王宝强王宝强王宝强王宝强王宝强</p>
+					<div class="tag_hot">热</div>
+					<div class="search_num pull-right">1320032</div>
+				</div>
+			</a></li>
+		</ul>
+	</section>
+	<script type="text/javascript">
+		// function go_top(){
+		// 	window.scrollTo(0,0)
+		// }
+		// var nav_h = document.querySelectorAll('.nav_top');
+		// nav_h = nav_h[0].offsetHeight;
+		// window.onscroll=function(){
+		// 	var s_h = document.body.scrollTop;
+		// 	var nav_scroll = document.querySelectorAll('.nav_scroll')[0];
+		// 	if(s_h > nav_h - 5){
+		// 		nav_scroll.setAttribute('class','nav_scroll')
+		// 	}else{
+		// 		nav_scroll.setAttribute('class','nav_scroll show')
+		// 	}
+		// }
+//切换栏目
+		function tab_check(){
+			var tabs = document.querySelectorAll('.tab');
+			for(var i = 0;i < tabs.length;i++){
+				tabs[i].addEventListener('click',function(){
+					document.querySelectorAll('.tab.active')[0].setAttribute('class','tab');
+					var id = this.attributes.pid.value;
+					this.setAttribute('class','active tab');
+					document.querySelector('.block.active').setAttribute('class','block')
+					document.querySelector('#'+id).setAttribute('class','block active')
+				})
+			}
+		}
+		tab_check()
+//表单提交
+	function ajax(options) {
+	    options = options || {};
+	    options.type = (options.type || "post").toUpperCase();
+	    options.dataType = options.dataType || 'json';
+	    options.async = options.async || true;
+	    var params = getParams(options.data);
+	    var xhr;
+	    if (window.XMLHttpRequest){
+	        xhr = new XMLHttpRequest();
+	    }else{
+	        xhr = new ActiveXObject('Microsoft.XMLHTTP')
+	    }
+	    xhr.onreadystatechange = function () {
+	        if (xhr.readyState == 4){
+	            var status = xhr.status;
+	            if (status >= 200 && status < 300 ){
+	                options.success && options.success(xhr.responseText,xhr.responseXML);
+	            }else{
+	                options.fail && options.fail(status);
+	            }
+	        }
+	    };
+	    if (options.type == 'GET'){
+	        xhr.open("GET",options.url + '?' + params ,options.async);
+	        xhr.send(null)
+	    }else if (options.type == 'POST'){
+	        xhr.open('POST',options.url,options.async);
+	        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	        xhr.send(params);
+	    }
+	}
+	function getParams(data) {
+	    var arr = [];
+	    for (var param in data){
+	        arr.push(encodeURIComponent(param) + '=' +encodeURIComponent(data[param]));
+	    }
+	    arr.push(('randomNumber=' + Math.random()).replace('.'));
+	    return arr.join('&');
+	}
+function sum(){
+	var input = document.querySelector('input[name="keyword"]');
+	var keyword = input.value;
+	ajax({
+		url:'./data.php',
+		method:'post',
+		data:{keyword:keyword},
+		success:function(msg){
+			
+		}
+	})
+}
+	
+//隐藏图标
+	function hideicon(){
+		var input = document.querySelector('input[name="keyword"]');
+		var icon = document.querySelector('.search_icon');
+		input.addEventListener('focus',function(){
+			icon.style.setProperty('display','none');
+			this.style.setProperty('padding-left','1rem');
+			this.setAttribute('placeholder','');
+		})
+	}
+	function check_input(){
+		var input = document.querySelector('input[name="keyword"]');
+		var icon = document.querySelector('.search_icon');
+		input.addEventListener('blur',function(){
+			if(!input.value){
+				icon.style.setProperty('display','block');
+				this.style.setProperty('padding-left','2.5rem');
+				this.setAttribute('placeholder','请输入视频名称或关键字');
+			}else{
+				sum();
+			}
+		})
+		
+	}
+	hideicon();
+	check_input()
+	</script>
+</body>
+</html>

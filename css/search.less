@@ -1,0 +1,117 @@
+@import './nav.less'; 
+@C0: #181919;
+@B0: #e2e2e2;
+.search_box{
+	background:@C0;
+	padding:0.5rem 1rem;
+	position:relative;
+	.search_icon{
+		width: 2rem;
+	    height: 100%;
+	    position: absolute;
+	    left: 1.2rem;
+	    top:0;
+		background-image:url('../images/home/search.png');
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size:1.5rem;
+	}
+	input[name='keyword']{
+		width:80%;
+		border:0;
+		border-radius:5px;
+		padding:0.2rem 0;
+		padding-left:2.5rem;
+		color:#909090;
+		line-height:2rem;
+		outline:0;
+		font-size:1.1rem;
+		    vertical-align: middle;
+		&:focus{
+			padding-left:1rem;
+		}
+	}
+	.submit_bnt{
+		display:block;
+		width:20%;
+		padding:0.2rem 0;
+		text-align:center;
+		color:#fff;
+		line-height:2rem;
+		background:rgba(0,0,0,0);
+		border:0;
+		outline:0;
+		font-size:1.1rem;
+	}
+}
+.searchlist{
+	margin:0;
+	padding:0;
+	background:#fff;
+	padding-top:1rem;
+	.search_title{
+		font-size:1.4rem;
+		color:@C0;
+		padding:1rem;
+		border-bottom:1px solid @B0;
+	}
+	li{
+		padding:0;
+		&.first,&.second,&.third{
+			.num{
+				background-image:url('../images/home/yellow.png');
+				color:@C0;
+			}
+		}
+		.num{
+			width:10%;
+			text-align:center;
+			padding:1rem 0;
+			float:left;
+			background-image:url('../images/home/gray.png');
+			background-repeat:no-repeat;
+			background-position:center;
+			background-size:1.6rem;
+			margin-left:2.5%;
+			
+			font-weight:bold;
+			font-size:1.1rem;
+			color:#fff;
+		}
+		.main{
+			float:right;
+			width:85%;
+			text-align:left;
+			padding:1rem 0;
+			border-bottom:1px solid @B0;
+			p{
+				font-size:1.2rem;
+				color:@C0;
+				margin-right:0.5rem;
+				display:inline-block;
+				margin-bottom:0;
+				max-width:60%;
+				overflow:hidden;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				vertical-align:top;
+			}
+			.tag_hot{
+				display:inline-block;
+				width:1.5rem;height:1.5rem;
+				border-radius:5px;
+				background:#d43a04;
+				color:#fff;
+				font-size:0.8rem;
+				text-align:center;
+				line-height:1.5rem;
+
+			}
+			.search_num{
+				margin-right:1rem;
+				color:#909090;
+				font-size:1rem;
+			}
+		}
+	}
+}

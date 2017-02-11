@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>哈趣-有趣有料的短视频</title>
+	<meta name="keywords" content="哈趣,哈趣APP,短视频,社交平台" />
+	<meta name="description" content="哈趣是一款移动端的短视频观看、分享、社交平台，提供最新最热门的有趣短视频内容。" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/find.css">
+</head>
+<body>
+	
+	<section>
+		<div class="find_header">
+			<div pid="day_list" class="tab active">每日精选</div>
+			<div pid="topic_list" class="tab">话题</div>
+		</div>
+		<div class="tab-content">
+			<div id="day_list" class="block active">
+				<div class="time_box">
+					<span class="month">08.</span>
+					<span class="day">24</span>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/day.png" alt="">
+						<div class="mask">
+							<div class="tag">美女</div>
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<div class="movie_time">
+								02"08
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/day.png" alt="">
+						<div class="mask">
+							<div class="tag">美女</div>
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<div class="movie_time">
+								02"08
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/day.png" alt="">
+						<div class="mask">
+							<div class="tag">美女</div>
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<div class="movie_time">
+								02"08
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="time_box">
+					<span class="month">08.</span>
+					<span class="day">23</span>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/day.png" alt="">
+						<div class="mask">
+							<div class="tag">美女</div>
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<div class="movie_time">
+								02"08
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/day.png" alt="">
+						<div class="mask">
+							<div class="tag">美女</div>
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<div class="movie_time">
+								02"08
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/day.png" alt="">
+						<div class="mask">
+							<div class="tag">美女</div>
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<div class="movie_time">
+								02"08
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div id="topic_list" class="block">
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/topic.png" alt="">
+						<div class="mask">
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<p>
+								全世界人都在看
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/topic.png" alt="">
+						<div class="mask">
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<p>
+								全世界人都在看
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/topic.png" alt="">
+						<div class="mask">
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<p>
+								全世界人都在看
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="move_box">
+					<a href="">
+						<img src="./images/home/topic.png" alt="">
+						<div class="mask">
+							<h3 class="title">
+								#2016YUROUE精选#
+							</h3>
+							<p>
+								全世界人都在看
+							</p>
+						</div>
+					</a>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+var num =1;//页码数
+    // $(document).scroll(function(){
+    // document.body.addEventListener('scroll',function(){
+    window.onscroll = function (e) {
+        var h = document.body.scrollHeight;//页面高度
+        var scroll =getScrollTop();
+        var s =window.screen.availHeight;//可见区域高度
+        var tab = document.querySelector('.tab.active').attributes.pid.value;
+        if(tab == 'day_list'){
+        	tab = 'day';
+        }else if(tab=='topic_list'){
+        	tab='topic';
+        }
+        if(h - scroll - s < 100){
+   			console.log(scroll);
+   			num++;
+        }
+    }
+    function getScrollTop() {  
+        var scrollPos;  
+        if (window.pageYOffset) {  
+        scrollPos = window.pageYOffset; }  
+        else if (document.compatMode && document.compatMode != 'BackCompat')  
+        { scrollPos = document.documentElement.scrollTop; }  
+        else if (document.body) { scrollPos = document.body.scrollTop; }   
+        return scrollPos;   
+	}
+//切换栏目
+		function tab_check(){
+			var tabs = document.querySelectorAll('.tab');
+			for(var i = 0;i < tabs.length;i++){
+				tabs[i].addEventListener('click',function(){
+					document.querySelectorAll('.tab.active')[0].setAttribute('class','tab');
+					var id = this.attributes.pid.value;
+					this.setAttribute('class','active tab');
+					document.querySelector('.block.active').setAttribute('class','block')
+					document.querySelector('#'+id).setAttribute('class','block active')
+					// setTimeout(function(){
+					// 	document.querySelectorAll('.block')[0].style.setProperty('height','0')
+					// 	document.querySelectorAll('.block')[1].style.setProperty('height','0')
+					// 	document.querySelector('.block.active').style.setProperty('height','auto')
+					// },200)
+					
+				})
+			}
+		}
+		tab_check()
+//顶部导航固定距离
+	function top_distance(){
+		var top_h = document.querySelector('.find_header').clientHeight;
+		var block=document.querySelectorAll('.block');
+		block[0].style.setProperty('margin-top',top_h+'px');
+	}
+	top_distance();
+
+	</script>
+</body>
+</html>

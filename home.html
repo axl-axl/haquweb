@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>哈趣-有趣有料的短视频</title>
+	<meta name="keywords" content="哈趣,哈趣APP,短视频,社交平台" />
+	<meta name="description" content="哈趣是一款移动端的短视频观看、分享、社交平台，提供最新最热门的有趣短视频内容。" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/home.css">
+</head>
+<body>
+	<nav>
+		<div class="nav_top">
+			<a href="" class="find">
+				<img src="./images/home/find.png">
+			</a>
+			<div class="logo">
+				<img src="./images/home/logo.png">
+			</div>
+			<a href='' class="search">
+				<img src="./images/home/search.png">
+			</a>
+		</div>
+		<div class="nav_scroll show">
+			<div class="hidescrollbar">
+				<div class="nav_list">
+					<li><a href="">
+						汽车
+					</a></li>
+					<li class="active"><a href="">
+						萌宠
+					</a></li>
+					<li><a href="">
+						影片
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+					<li><a href="">
+						影片
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+					<li><a href="">
+						汽车
+					</a></li>
+				</div>
+			</div>
+		</div>
+	<!--新加提醒刷新条数-->
+		<div class="warning">
+			已为您添加八条数据
+		</div>
+	</nav>
+	<section class="video_list">
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<!-- <img src="./images/home/header.png"> -->
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info"  onclick="window.location.href=''">
+				<div class="tag_box">
+					<span><a href="">
+						美女
+					</a></span>/
+					<span><a href="">
+						摄影
+					</a></span>/
+					<span><a href="">
+						神技
+					</a></span>
+				</div>
+				<div class="comment_tag pull-right">
+					<a href="http://www.baidu.com">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<img src="./images/home/header.png">
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info">
+				<span><a href="">
+					美女
+				</a></span>/
+				<span><a href="">
+					摄影
+				</a></span>/
+				<span><a href="">
+					神技
+				</a></span>
+				<div class="comment_tag pull-right">
+					<a href="">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<img src="">
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info">
+				<span><a href="">
+					美女
+				</a></span>/
+				<span><a href="">
+					摄影
+				</a></span>/
+				<span><a href="">
+					神技
+				</a></span>
+				<div class="comment_tag pull-right">
+					<a href="">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript" src='./js/jquery.min.js'></script>
+	<script type="text/javascript">
+//新加滚动刷新
+	window.onscroll=function(){
+		var scroll = getScrollTop();
+		var dh = document.body.scrollHeight;//页面高度
+		var vh =window.screen.availHeight;//可见区域高度
+		var str='';
+		if(dh - scroll -vh <= 100){
+			for(var i =0;i<5;i++){
+				str +='<div class="video_box">';
+				str += '<div class="img_box">';
+				str += '	<a href="">';
+				str += '		<img src="./images/home/header.png">';
+				str += '		<div class="mask">';
+				str += '			<h3 class="title">';
+				str += '				大神教你拍好女朋友！';
+				str += '			</h3>';
+				str += '			<div class="play_btn"></div>';
+				str += '			<p class="video_long">02"08"</p>';
+				str += '			<p class="play_num">12万+次浏览</p>';
+				str += '		</div>';
+				str += '	</a>';
+				str += '</div>';
+				str += '<div class="info">';
+				str += '	<div class="tag_box">';
+				str += '		<span><a href="">';
+				str += '			美女';
+				str += '		</a></span>/';
+				str += '		<span><a href="">';
+				str += '			摄影';
+				str += '		</a></span>/';
+				str += '		<span><a href="">';
+				str += '			神技';
+				str += '		</a></span>';
+				str += '	</div>';
+				str += '	<div class="comment_tag pull-right">';
+				str += '		<a href="">';
+				str += '			99';
+				str += '		</a>';
+				str += '	</div>';
+				str += '</div>';
+				str += '</div>';
+			}
+			var div= document.createElement('div');
+			div.innerHTML = str;
+			document.querySelector('.video_list').appendChild(div);
+			document.querySelector('.warning').style.setProperty('display','block');
+			setTimeout(function(){
+				document.querySelector('.warning').style.setProperty('display','none');
+			},1000)
+		}
+	}
+
+	function getScrollTop() {  
+        var scrollPos;  
+        if (window.pageYOffset) {  
+        scrollPos = window.pageYOffset; }  
+        else if (document.compatMode && document.compatMode != 'BackCompat')  
+        { scrollPos = document.documentElement.scrollTop; }  
+        else if (document.body) { scrollPos = document.body.scrollTop; }   
+        return scrollPos;   
+	}
+	</script>
+</body>
+</html>

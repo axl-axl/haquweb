@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>哈趣-有趣有料的短视频</title>
+	<meta name="keywords" content="哈趣,哈趣APP,短视频,社交平台" />
+	<meta name="description" content="哈趣是一款移动端的短视频观看、分享、社交平台，提供最新最热门的有趣短视频内容。" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/topic.css">
+</head>
+<body>
+	<section>
+		<div class="topic_img">
+			<img src="./images/home/day.png" width='100%'>
+			<div class="mask">
+				<p class="title">#你最想了解的星座</p>
+				<p class="movie_num">共 <span class="num">39</span> 个视频</p>
+			</div>
+		</div>
+		<div class="find_header">
+			<div pid="latest" class="tab active">每日精选</div>
+			<div pid="hotest" class="tab">话题</div>
+		</div>
+	</section>
+	<section class="video_list active" id='latest'>
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<img src="./images/home/header.png">
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info">
+				<span><a href="">
+					美女
+				</a></span>/
+				<span><a href="">
+					摄影
+				</a></span>/
+				<span><a href="">
+					神技
+				</a></span>
+				<div class="comment_tag pull-right">
+					<a href="">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<img src="./images/home/header.png">
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info">
+				<span><a href="">
+					美女
+				</a></span>/
+				<span><a href="">
+					摄影
+				</a></span>/
+				<span><a href="">
+					神技
+				</a></span>
+				<div class="comment_tag pull-right">
+					<a href="">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<img src="./images/home/header.png">
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info">
+				<span><a href="">
+					美女
+				</a></span>/
+				<span><a href="">
+					摄影
+				</a></span>/
+				<span><a href="">
+					神技
+				</a></span>
+				<div class="comment_tag pull-right">
+					<a href="">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="video_list" id='hotest'>
+		<div class="video_box">
+			<div class="img_box">
+				<a href="">
+					<img src="./images/home/header.png">
+					<div class="mask">
+						<h3 class="title">
+							大神教你拍好女朋友！
+						</h3>
+						<div class="play_btn"></div>
+						<p class="video_long">02"08"</p>
+						<p class="play_num">12万+次浏览</p>
+					</div>
+				</a>
+			</div>
+			<div class="info">
+				<span><a href="">
+					美女
+				</a></span>/
+				<span><a href="">
+					摄影
+				</a></span>/
+				<span><a href="">
+					神技
+				</a></span>
+				<div class="comment_tag pull-right">
+					<a href="">
+						99
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+	window.onscroll=function(){
+		var scroll = getScrollTop();
+		var top_h = document.querySelector('.topic_img').clientHeight;
+		var tab = document.querySelector('.tab.active').attributes.pid.value;
+		if(tab=='latest'){
+			tab =''
+		}else if(tab == 'hotest'){
+			tab = ''
+		}
+
+		if(scroll >= top_h){
+			document.querySelector('.find_header').style.setProperty('position','fixed');
+		}else{
+			document.querySelector('.find_header').style.setProperty('position','static');
+		}
+
+	}
+	function getScrollTop() {  
+        var scrollPos;  
+        if (window.pageYOffset) {  
+        scrollPos = window.pageYOffset; }  
+        else if (document.compatMode && document.compatMode != 'BackCompat')  
+        { scrollPos = document.documentElement.scrollTop; }  
+        else if (document.body) { scrollPos = document.body.scrollTop; }   
+        return scrollPos;   
+	}
+	//切换栏目
+		function tab_check(){
+			var tabs = document.querySelectorAll('.tab');
+			for(var i = 0;i < tabs.length;i++){
+				tabs[i].addEventListener('click',function(){
+					document.querySelectorAll('.tab.active')[0].setAttribute('class','tab');
+					var id = this.attributes.pid.value;
+					this.setAttribute('class','active tab');
+					document.querySelector('.video_list.active').setAttribute('class','video_list')
+					document.querySelector('#'+id).setAttribute('class','video_list active')
+					
+				})
+			}
+		}
+		tab_check();
+	</script>
+</body>
+</html>
